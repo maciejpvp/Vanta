@@ -1,9 +1,12 @@
 import http from "http";
 import { Server as SocketIOServer } from "socket.io";
 import { app } from "./app";
+import { initDB } from "./database/db";
 import { initializeSocket } from "./modules/common/socket.handler";
 
 const PORT = process.env.PORT || 3000;
+
+initDB();
 
 const httpServer = http.createServer(app);
 
